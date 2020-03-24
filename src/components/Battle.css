@@ -1,0 +1,27 @@
+.battlefield{
+   display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh; 
+}
+
+ .anchor{     align-self: flex-end;
+ }
+
+.atk{
+    position: absolute;
+    width: 53vw;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 25vh
+}
+
+.atk > li {
+    width: 50%;
+    list-style: none;
+    align-self: center;
+}

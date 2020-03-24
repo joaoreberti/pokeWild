@@ -8,7 +8,7 @@ class P1 extends Component {
       url: props.pokemon.url,
       sprite: props.pokemon.sprite
     };
-  }
+  } 
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
