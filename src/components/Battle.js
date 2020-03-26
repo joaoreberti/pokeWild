@@ -17,7 +17,7 @@ class Battle extends Component {
     }
 
     handleClick(index) {
-    
+
         console.log(index)
 
     }
@@ -35,10 +35,10 @@ class Battle extends Component {
                         name: pokemonStats.forms[0].name,
                         hp: pokemonStats.stats[5].base_stat,
                         atks:
-                            [pokemonStats.moves[0].move.name,
-                            pokemonStats.moves[1].move.name,
-                            pokemonStats.moves[3].move.name,
-                            pokemonStats.moves[4].move.name,],
+                            [pokemonStats.moves[0].move,
+                            pokemonStats.moves[1].move,
+                            pokemonStats.moves[3].move,
+                            pokemonStats.moves[4].move,],
                         spriteBack: pokemonStats.sprites.back_default
 
 
@@ -58,10 +58,10 @@ class Battle extends Component {
                         name: pokemonStats.forms[0].name,
                         hp: pokemonStats.stats[5].base_stat,
                         atks:
-                            [pokemonStats.moves[0].move.name,
-                            pokemonStats.moves[1].move.name,
-                            pokemonStats.moves[3].move.name,
-                            pokemonStats.moves[4].move.name,],
+                            [pokemonStats.moves[0].move,
+                            pokemonStats.moves[1].move,
+                            pokemonStats.moves[3].move,
+                            pokemonStats.moves[4].move,],
                         sprite: pokemonStats.sprites.front_default
 
 
@@ -76,7 +76,6 @@ class Battle extends Component {
             <div>
                 {this.state.isLoading ? <h1>Loading</h1> : <div className="battlefield">
                     <Pokemon2 stats={this.state.pokemon2} />
-                    <div className="atk">{this.state.pokemon1.atks ? this.state.pokemon1.atks.map((atk, index) => <li key={index} onClick={()=>this.handleClick(index)}>{atk}</li>) : <li>Loading</li>}</div>
 
                     <Pokemon1 stats={this.state.pokemon1} onAttack={(attack) => {
                         // Calcular o dano do atak

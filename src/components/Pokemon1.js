@@ -1,35 +1,77 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import "./Battle.css"
 
-class Pokemon1 extends Component{
-    constructor(props){
+
+class Pokemon1 extends Component {
+    constructor(props) {
         super(props)
         this.state = {
-            hp: props.stats.hp,
-            isLoading: false,
             name: props.stats.name,
-            url: props.stats.url,
+            hp: props.stats.hp,
+            attacks: props.stats.atks,
             sprite: props.stats.spriteBack,
-            hp: props.stats.pokemonStats
+            isLoading: false,
+            attackStats:[]
+
         }
+
+        this.updateHealthBar = this.updateHealthBar.bind(this)
     }
 
-    componentDidUpdate(prevProps){
-        if(prevProps !== this.props){
+    updateHealthBar(hp) {
+        let newBAr = Math.round((hp * 200) / this.state.maxHp)
+        return newBAr
+    }
+
+
+
+    componentDidMount() {
+        const maxHp = this.state.hp
+        this.setState({ maxHp });
+
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
             this.setState(this.props)
         }
-
-        
-    }  
-   
-    render(){
-        return(
-            <div className="anchor" onClick={() => this.props.onAttack('a')}>
-                {this.state.name}
-                <img src={`${this.state.sprite}`} />
+        for(let i = 0; i<this.state.attacks.length; i++){
+            fetch(`${this.state.attacks[0].url}`)
+            .then(result => result.json())
+            .then(data => {
+                const attackStats = data
+                let newState = this.state 
                 
+                newState.attackStats[i] = attackStats.power
+
+                this.setState(newState)
+            }
+                )
+
+        }
+
+
+    }
+
+    render() {
+        return (
+            <div className="anchor">
+                <img className="pokemon1" src={`${this.state.sprite}`} />
+                <div className="hpbox">
+                    <div>{this.state.name}</div>
+
+
+                    <div className="hpbar">
+                        <div style={{ width: `${this.updateHealthBar(this.state.hp)}px` }} className="currentHp"></div>
+                    </div>
+                </div>
+
+                <div className="atk">{this.state.attacks ? this.state.attacks.map((atk, index) => <li key={index} onClick={() => this.props.onAttack(atk)}>{atk.name}</li>) : <li>Loading</li>}</div>
+
+
 
             </div>
-            )
+        )
     }
 }
 

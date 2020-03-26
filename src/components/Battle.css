@@ -6,22 +6,60 @@
     height: 100vh; 
 }
 
- .anchor{     align-self: flex-end;
+ .anchor{         align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    width: 100vw;
  }
 
 .atk{
-    position: absolute;
     width: 53vw;
     align-self: flex-end;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
-    height: 25vh
+    height: 25vh;
+    border: 1px solid black;
+    margin-bottom: 1px;
 }
 
 .atk > li {
-    width: 50%;
+    width: calc(50% - 20px);
     list-style: none;
     align-self: center;
+    border: 1px solid black;
+    padding: 10px 0;
+    margin: 0 5px;
+    margin-left: 10px ;
 }
+
+.pokemon1{
+    padding: 0px;
+    width: 300px;
+    height: 300px;
+}
+.pokemon2{
+    margin-right: 200px ;
+    width: 300px;
+}
+
+.hpbox{
+    position: absolute;
+    justify-content: flex-end;
+    margin-left: calc(100% - 400px);
+}
+.hpbar{
+    width: 200px;
+    height: 20px;
+    background-color: black ;
+}
+
+.currentHp{
+    height: 20px;
+    background-color: green;
+}
+
+
