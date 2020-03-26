@@ -1,65 +1,122 @@
-.battlefield{
-   display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 100vw;
-    height: 100vh; 
+.battlefield {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
 }
 
- .anchor{         align-self: flex-end;
+.anchor {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  width: 100vw;
+}
+
+.anchorTop {
+    align-self: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: absolute;
     width: 100vw;
- }
+  }
 
-.atk{
-    width: 53vw;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: center;
-    height: 25vh;
-    border: 1px solid black;
-    margin-bottom: 1px;
+
+.atk {
+  width: 53vw;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 25vh;
+  border: 1px solid black;
+  margin-bottom: 1px;
+  z-index: 1000;
 }
 
 .atk > li {
-    width: calc(50% - 20px);
-    list-style: none;
-    align-self: center;
-    border: 1px solid black;
-    padding: 10px 0;
-    margin: 0 5px;
-    margin-left: 10px ;
+  width: calc(50% - 20px);
+  list-style: none;
+  align-self: center;
+  border: 1px solid black;
+  padding: 10px 0;
+  margin: 0 5px;
+  margin-left: 10px;
 }
 
-.pokemon1{
+.pokemon1 {
+  padding: 0px;
+  width: 300px;
+  height: 300px;
+}
+.pokemon2 {
     padding: 0px;
     width: 300px;
     height: 300px;
 }
-.pokemon2{
-    margin-right: 200px ;
-    width: 300px;
+
+.hpbox {
+  position: absolute;
+  justify-content: flex-end;
+  margin-left: calc(100% - 400px);
+  align-self: center;
+  padding-bottom: 100px;
+  
+}
+.hpbox2 {
+    margin-top: 50px;
+    margin-left: 10vw;
+ 
+}
+.hpbar {
+  width: 200px;
+  height: 20px;
+  background-color: black;
 }
 
-.hpbox{
-    position: absolute;
-    justify-content: flex-end;
-    margin-left: calc(100% - 400px);
-}
-.hpbar{
-    width: 200px;
-    height: 20px;
-    background-color: black ;
+.currentHp {
+  height: 20px;
+  background-color: green;
 }
 
-.currentHp{
-    height: 20px;
-    background-color: green;
+.message {
+  margin-top: calc(100vh - 130px);
+  min-width: 300px;
+  height: 100px;
+  padding-top: 20px;
+  margin-left: 200px;
+  margin-right: calc(100vw - 350px) ;
+  border: 1px solid black;
+  z-index: 1000;
+  background-color: gray ;
+  justify-content: center;
+  text-align: left;
+
+    
 }
 
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
 
+  @keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.typewriter{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}

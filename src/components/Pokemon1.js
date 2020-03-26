@@ -28,6 +28,8 @@ class Pokemon1 extends Component {
     componentDidMount() {
         const maxHp = this.state.hp
         this.setState({ maxHp });
+            
+
 
     }
 
@@ -35,21 +37,8 @@ class Pokemon1 extends Component {
         if (prevProps !== this.props) {
             this.setState(this.props)
         }
-        for(let i = 0; i<this.state.attacks.length; i++){
-            fetch(`${this.state.attacks[0].url}`)
-            .then(result => result.json())
-            .then(data => {
-                const attackStats = data
-                let newState = this.state 
-                
-                newState.attackStats[i] = attackStats.power
-
-                this.setState(newState)
-            }
-                )
-
-        }
-
+            
+        
 
     }
 

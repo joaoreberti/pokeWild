@@ -19,8 +19,7 @@ class P2 extends Component {
 
         
       });
-    }
-  }
+    }  }
 
   render() {
     return (
