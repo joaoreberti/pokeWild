@@ -1,7 +1,18 @@
 .player1{
     position: relative;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+
 
 }
 .player2{
     position: relative;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+
+
 }

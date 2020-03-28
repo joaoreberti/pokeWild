@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url("./fonts/PokemonGb-RAeo.ttf");
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+body{
+    text-transform: uppercase;
+    font-family:"Pokemon";
+    background-color: red;
+}

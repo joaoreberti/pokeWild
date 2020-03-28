@@ -6,12 +6,15 @@ class Pokemon1 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: props.stats.name,
-            hp: props.stats.hp,
-            attacks: props.stats.atks,
-            sprite: props.stats.spriteBack,
-            isLoading: false,
-            attackStats:[]
+            stats:{
+                name: props.stats.name,
+                hp: props.stats.hp,
+                atks: props.stats.atks,
+                spriteBack: props.stats.spriteBack,
+                isLoading: false,
+                attackStats:[]    
+            }
+            
 
         }
 
@@ -24,9 +27,8 @@ class Pokemon1 extends Component {
     }
 
 
-
     componentDidMount() {
-        const maxHp = this.state.hp
+        const maxHp = this.state.stats.hp
         this.setState({ maxHp });
             
 
@@ -36,6 +38,8 @@ class Pokemon1 extends Component {
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
             this.setState(this.props)
+            this.updateHealthBar(this.state.stats.hp)
+            
         }
             
         
@@ -45,17 +49,17 @@ class Pokemon1 extends Component {
     render() {
         return (
             <div className="anchor">
-                <img className="pokemon1" src={`${this.state.sprite}`} />
+                <img className="pokemon1" src={`${this.state.stats.spriteBack}`} />
                 <div className="hpbox">
-                    <div>{this.state.name}</div>
+                    <div>{this.state.stats.name}</div>
 
 
                     <div className="hpbar">
-                        <div style={{ width: `${this.updateHealthBar(this.state.hp)}px` }} className="currentHp"></div>
+                        <div style={{ width: `${this.updateHealthBar(this.state.stats.hp)}px` }} className="currentHp"></div>
                     </div>
                 </div>
 
-                <div className="atk">{this.state.attacks ? this.state.attacks.map((atk, index) => <li key={index} onClick={() => this.props.onAttack(atk)}>{atk.name}</li>) : <li>Loading</li>}</div>
+                <div className="atk">{this.state.stats.atks ? this.state.stats.atks.map((atk, index) => <li key={index} onClick={() => this.props.onAttack(atk)}>{atk.name}</li>) : <li>Loading</li>}</div>
 
 
 

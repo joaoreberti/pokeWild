@@ -80,7 +80,7 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className="landingPage">
         {this.state.battle ? <Battle pokemon1={this.state.pokemon1} pokemon2={this.state.pokemon2} /> : <main>
           {this.state.isLoading && <h1>Loading</h1>}
           <div className="grid">
@@ -111,11 +111,15 @@ class List extends Component {
           <div className="players">
             {" "}
             <P1 pokemon={this.state.pokemon1} />
-            <button onClick={this.handleSubmit} name="ready1">Ready?</button>
-            <button name="battle" onClick={this.handleSubmit}>Battle</button>
+            <button className="go" name="battle" onClick={this.handleSubmit}>GO</button>
             <P2 pokemon={this.state.pokemon2} />
-            <button onClick={this.handleSubmit} name="ready2">Ready?</button>
           </div>
+          <div className="readys" >
+          <button className="ready1" onClick={this.handleSubmit} name="ready1">Ready?</button>
+          <button className="ready2" onClick={this.handleSubmit} name="ready2">Ready?</button>
+          </div>
+
+
         </main>}
 
       </div>

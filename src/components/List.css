@@ -1,3 +1,6 @@
+
+
+
 .grid{
     margin-top: 10vh ;
     display: flex;
@@ -13,27 +16,48 @@
 
 
 .cell{
+    background-color: antiquewhite;
+    border-radius: 5px;
     border: 1px solid black;
     position: relative;
-    width: calc(100% / 10);
+    width: calc(100% / 6);
     text-align: center;
     padding: 1px;
-    margin: 1px;
+    margin: 2px;
     box-shadow: 10px solid black, 20px solid rgba(0, 0, 0, 0,15)
 }
 
 .cell:hover {
-    border: 1px solid blue;
+    border: 5px solid transparent;
+    box-shadow: 0 0 5px 5px olive;
+
 }
 
-button{
-    margin-top: 15px;
-    width: 50px;
+.go{
+    background: whitesmoke;
+    font-size: large;
+    margin-top: 50px;
     height: 50px;
+    width: 50px;
     border-radius: 20px;
 }
 
+.ready1, .ready2{
+border-radius: 10px;
+font-size: 1.5rem;
+}
+
+
+.readys{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
 .players{
+    margin-top: 10px;
     width: 100vw;
     display: flex;
     flex-direction: row;

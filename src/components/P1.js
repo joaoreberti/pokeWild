@@ -26,8 +26,8 @@ class P1 extends Component {
     return (
       <div key={this.state.name} className="player1">
         Player1
-        <p>Name : {this.state.name}</p>
-        <img alt="qtpie" src={`${this.state.sprite}`} /><p>Url : {this.state.url}</p>
+        <p>{this.state.name}</p>
+        <img alt="qtpie" src={`${this.state.sprite}`} />{/* <p>Url : {this.state.url}</p> */}
       </div>
     );
   }

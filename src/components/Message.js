@@ -6,12 +6,14 @@ class Message extends Component{
         super(props)
         this.state = {
             msg : props.msg,
+            style:""
 
         }
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
+            this.setState({style:"typewriter"})
             this.setState(this.props)
         }
             
@@ -21,7 +23,7 @@ class Message extends Component{
 
     render(){
         return(
-        <div className=" message"><p className="typewriter">{this.state.msg}</p></div>
+        <div className=" message"><p className={`${this.state.style}`}>{this.state.msg}</p></div>
         )
     }
 }

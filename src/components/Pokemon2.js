@@ -29,12 +29,18 @@ class Pokemon2 extends Component {
     this.setState({ maxHp });
   }
 
+
+ 
+
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.setState(this.props);
       this.updateHealthBar(this.state.stats.hp)
+      if (this.props.turn){
+          this.props.randomAttack(this.props.stats.atks)
+        }
+        
     }
-    console.log('updated')
   }
 
   render() {

@@ -23,10 +23,10 @@ class P2 extends Component {
 
   render() {
     return (
-      <div key={this.state.name} className="player1">
-        Player2
-        <p>Name : {this.state.name}</p>
-        <img alt="qtpie" src={`${this.state.sprite}`} /><p>Url : {this.state.url}</p>
+      <div key={this.state.name} className="player2">
+        CPU
+        <p> {this.state.name}</p>
+        <img alt="qtpie" src={`${this.state.sprite}`} />{/* <p>Url : {this.state.url}</p> */}
       </div>
     );
   }
