@@ -51,7 +51,7 @@ class List extends Component {
         pokemon2: {
           name: this.state.pokemons[index].name,
           url: this.state.pokemons[index].url,
-          sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseFloat(index)}.png`,
+          sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseFloat(index)+1}.png`,
         }
       });
     } else {
@@ -111,7 +111,7 @@ class List extends Component {
           <div className="players">
             {" "}
             <P1 pokemon={this.state.pokemon1} />
-            <button className="go" name="battle" onClick={this.handleSubmit}>GO</button>
+            <button className="go"name="battle" onClick={this.handleSubmit}>GO</button>
             <P2 pokemon={this.state.pokemon2} />
           </div>
           <div className="readys" >
